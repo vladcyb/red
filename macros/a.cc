@@ -5,6 +5,8 @@
             TimeTest(func, #func)
 #define PRINT(x) cout << #x
 #define print PRINT(
+#define PRINT_LINE_AND_FILE cout << __LINE__ \
+    << " line in the file " << __FILE__ << endl
 
 using namespace std;
 
@@ -44,7 +46,10 @@ int main(){
     // PRINT(hello world);
     cout << "This is a line number " << __LINE__ << " in file " << __FILE__ << endl;
     cout << "This is a line number " << __LINE__ << " in file " << __FILE__ << endl;
-    print hello world);
+    print hello world\n);
+    PRINT_LINE_AND_FILE;
+    PRINT_LINE_AND_FILE;
+    PRINT_LINE_AND_FILE;
 
     return 0;
 }
