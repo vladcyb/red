@@ -4,6 +4,7 @@
 #define TIME_TEST(func) \
             TimeTest(func, #func)
 #define PRINT(x) cout << #x
+#define print PRINT(
 
 using namespace std;
 
@@ -37,11 +38,13 @@ void PrintHello(){
 
 int main(){
 
-    TIME_TEST(Foo1);
-    TIME_TEST(Foo2);
-    TIME_TEST(PrintHello);
-    PRINT(hello world);
-
+    // TIME_TEST(Foo1);
+    // TIME_TEST(Foo2);
+    // TIME_TEST(PrintHello);
+    // PRINT(hello world);
+    cout << "This is a line number " << __LINE__ << " in file " << __FILE__ << endl;
+    cout << "This is a line number " << __LINE__ << " in file " << __FILE__ << endl;
+    print hello world);
 
     return 0;
 }
