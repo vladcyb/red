@@ -24,13 +24,21 @@ IteratorRange<class vector<T>::iterator> Head(
     };
 }
 
+template<class Iterator>
+IteratorRange<Iterator> MakeRange(Iterator begin, Iterator end){
+    return IteratorRange<Iterator>{begin, end};
+}
+
 int main(){
-    vector<int> v = {1, 2, 3, 4, 5};
-    for(int& x : Head(v, 3)){
-        ++x;
-    }
-    for(int x : v){
+    vector<int> v = {1, 2, 3, 4, 5, 6};
+
+    auto second_half = MakeRange(
+        begin(v) + v.size() / 2, end(v)
+    );
+
+    for(int x : second_half){
         cout << x << ' ';
     }
+
     return 0;
 }
