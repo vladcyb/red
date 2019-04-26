@@ -5,8 +5,13 @@ using namespace std;
 
 template<class Iterator>
 struct IteratorRange{
+private:
     Iterator first, last;
-
+public:
+    IteratorRange(Iterator f, Iterator l)
+    : first(f)
+    , last(l) {
+    }
     Iterator begin(){
         return first;
     }
@@ -32,7 +37,7 @@ IteratorRange<Iterator> MakeRange(Iterator begin, Iterator end){
 int main(){
     vector<int> v = {1, 2, 3, 4, 5, 6};
 
-    auto second_half = MakeRange(
+    IteratorRange second_half(
         begin(v) + v.size() / 2, end(v)
     );
 
